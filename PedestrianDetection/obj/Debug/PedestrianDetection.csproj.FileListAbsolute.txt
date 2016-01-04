@@ -29,8 +29,6 @@ D:\Working\PedestrianDetectionForDark\PedestrianDetection\obj\Debug\Example.Pede
 D:\Working\PedestrianDetectionForDark\PedestrianDetection\obj\Debug\PedestrianDetection.csprojResolveAssemblyReference.cache
 C:\Users\Star\Source\Repos\pedestrian-detectionDS\PedestrianDetection\obj\Debug\Example.PedestrianDetection.exe
 C:\Users\Star\Source\Repos\pedestrian-detectionDS\PedestrianDetection\obj\Debug\Example.PedestrianDetection.pdb
-C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\PedestrianDetection\obj\Debug\Example.PedestrianDetection.exe
-C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\PedestrianDetection\obj\Debug\Example.PedestrianDetection.pdb
 C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Debug\test.jpg
 C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Debug\cvextern.dll
 C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Debug\opencv_calib3d2410.dll
@@ -50,6 +48,7 @@ C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Debug\opencv_stitching
 C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Debug\opencv_superres2410.dll
 C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Debug\opencv_video2410.dll
 C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Debug\opencv_videostab2410.dll
-C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Debug\Example.PedestrianDetection.exe
-C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Debug\Example.PedestrianDetection.pdb
-C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\PedestrianDetection\obj\Debug\PedestrianDetection.csprojResolveAssemblyReference.cache
+C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Debug\detect.exe
+C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Debug\detect.pdb
+C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\PedestrianDetection\obj\Debug\detect.exe
+C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\PedestrianDetection\obj\Debug\detect.pdb

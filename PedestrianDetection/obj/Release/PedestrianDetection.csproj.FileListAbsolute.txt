@@ -1,6 +1,4 @@
 C:\Users\Star\Documents\GitHub\bin\test.jpg
-C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\PedestrianDetection\obj\Release\Example.PedestrianDetection.exe
-C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\PedestrianDetection\obj\Release\Example.PedestrianDetection.pdb
 C:\Users\Star\Documents\GitHub\bin\cvextern.dll
 C:\Users\Star\Documents\GitHub\bin\opencv_calib3d2410.dll
 C:\Users\Star\Documents\GitHub\bin\opencv_contrib2410.dll
@@ -40,5 +38,7 @@ C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Release\opencv_stitchi
 C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Release\opencv_superres2410.dll
 C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Release\opencv_video2410.dll
 C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Release\opencv_videostab2410.dll
-C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Release\Example.PedestrianDetection.exe
-C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Release\Example.PedestrianDetection.pdb
+C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Release\detect.exe
+C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\bin\Release\detect.pdb
+C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\PedestrianDetection\obj\Release\detect.exe
+C:\Users\Star\Documents\GitHub\pedestrian-detectionDS\PedestrianDetection\obj\Release\detect.pdb
