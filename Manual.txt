@@ -1,0 +1,12 @@
+This is a console program.
+This project detects pedestrian's regions from dark streetview images.
+
+using: 
+ - open command prompt.
+ - detect [filename] or detect -o
+   for ex;
+      > detect "c:\\1.png"
+          This displays image view that shows pedestrian's regions.
+      > detect -o
+          This opens an OpenFileDialog. Then user can select any images on computer.
+          It shows pedestrian's regions too.
