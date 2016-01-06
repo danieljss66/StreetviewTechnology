@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.IO;
 using Emgu.CV;
 using Emgu.CV.Structure;
 using Emgu.CV.UI;
@@ -15,8 +16,8 @@ using Emgu.CV.GPU;
 
 namespace PedestrianDetection
 {
-   static class Program
-   {
+    static class Program
+    {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -25,8 +26,15 @@ namespace PedestrianDetection
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmMain());
-            string strParam = args[0];
+
+            int nArgLength = args.Length;
+
+            string strParam = "-o";
+
+            if (nArgLength > 0)
+            {
+                strParam = args[0];
+            }
 
             if (strParam.ToLower() == "-o")
             {
@@ -37,14 +45,16 @@ namespace PedestrianDetection
                 if (openDlg.ShowDialog() == DialogResult.OK)
                 {
                     strParam = openDlg.FileName;
-                }
-                else
-                {
-                    Application.Exit();
+                    Detect(strParam);
                 }
             }
-
-            Detect(strParam);
+            else
+            {
+                if (System.IO.File.Exists(strParam))
+                {
+                    Detect(strParam);
+                }
+            }
         }
 
         static void Detect(string strPathName)
@@ -66,7 +76,8 @@ namespace PedestrianDetection
             float fHeightFit = fHeightSrc * fRate;
 
             Bitmap bmpFit = new Bitmap(bmpSrc, (int)fWidthFit, (int)fHeightFit);
-            Image<Bgr, Byte> src = new Image<Bgr, Byte>(bmpFit);
+            Image<Bgr, Byte> src = new Image<Bgr, Byte>(bmpSrc);
+            Image<Bgr, Byte> srcFit = new Image<Bgr, Byte>(bmpFit);
             Image<Gray, Byte> gray = new Image<Gray, byte>(bmpFit);
             Bitmap bmpAdjust, bmpGray;
             bmpGray = gray.ToBitmap();
@@ -80,9 +91,26 @@ namespace PedestrianDetection
 
             List<Rectangle> lstResults = new List<Rectangle>();
 
+            string strPath = System.IO.Path.GetDirectoryName(strPathName);
+            string strName = System.IO.Path.GetFileName(strPathName);
+            string strExt = System.IO.Path.GetExtension(strPathName);
+
+            string strMainPathName = strPath + "\\" + strName + "_pedestrian_regions";
+
+            string strCSVTempPathName = strMainPathName + ".csv";
+            string strImgTempPathName = strMainPathName + strExt;
+
+
             using (Image<Bgr, Byte> image = new Image<Bgr, byte>(bmpAdjust))
             {
+                string strCSVPathName = strCSVTempPathName;
+                StreamWriter swCSV = new StreamWriter(strCSVPathName);
                 Rectangle[] results = FindPedestrian.Find(bmpAdjust, out processingTime, hitThreshold, scale, finalThreshold, useMeanshiftGrouping);
+
+                int i = 0;
+
+                swCSV.WriteLine(strPathName);
+                swCSV.WriteLine("Rectangle,Left,Top,Width,Height");
 
                 foreach (Rectangle rect in results)
                 {
@@ -92,12 +120,21 @@ namespace PedestrianDetection
                                        (int)(rect.Width / fRate),
                                        (int)(rect.Height / fRate));
 
-                    Console.WriteLine("Rectangle Left={0}, Top={1}, Width={2}, Height={3}", rc.Left, rc.Top, rc.Width, rc.Height);
+                    i++;
+                    string strLine = string.Format("{0},{1},{2},{3},{4}", i, rc.Left, rc.Top, rc.Width, rc.Height);
+                    swCSV.WriteLine(strLine);
+
                     lstResults.Add(rc);
 
-                    src.Draw(rect, new Bgr(Color.Red), 1);
+                    srcFit.Draw(rect, new Bgr(Color.Red), 1);
+                    src.Draw(rc, new Bgr(Color.Red), 1);
+                    src.Save(strImgTempPathName);
                 }
-                ImageViewer.Show(src);
+
+                swCSV.Close();
+                System.Diagnostics.Process.Start(strCSVPathName);
+
+                ImageViewer.Show(srcFit);
             }
 
             Rectangle[] _results = lstResults.ToArray();
