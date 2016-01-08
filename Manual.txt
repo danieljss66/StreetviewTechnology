@@ -7,6 +7,3 @@ using:
    for ex;
       > detect "c:\\1.png"
           This displays image view that shows pedestrian's regions.
-      > detect -o
-          This opens an OpenFileDialog. Then user can select any images on computer.
-          It shows pedestrian's regions too.
