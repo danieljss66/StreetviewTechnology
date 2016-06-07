@@ -8,7 +8,7 @@ Skype: daniels.jss
 github: danieljss66  
 
 
-Rate: $20/hr.  
+Rate: $50/hr.  
 Approximately 20 hrs at most.  
 Show you the middle build this weekend, can finish by 5th Jan 2016.  
 
